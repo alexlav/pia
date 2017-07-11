@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+<Results version="1.0">
+<ReportNode type="testrun">
+<ReportNode type="Iteration">
+<ReportNode type="Action">
+<ReportNode type="User">
+<Data>
+    <Name>Loading framework</Name>
+    <Description>from local cache in 'C:\Projects\UFT\LOCAL\PIA_Tests\Framework'.</Description>
+    <StartTime>2017-06-27 11:09:42</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>Loading framework</Name>
+    <Description>finished.</Description>
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43: ************************** Initialize Test starting ... **************************</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43:    Run Results stored in 'C:\Projects\UFT\LOCAL\PIA_Tests\PIA_Nachweisplanung\Res2'</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43: Opening Global Parameter File ...</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43:    Global Parameter File is used. (See library file msgfw_const_global).</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43:    Not connected to Test Director!</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43:    Searching Global Parameter File in the filesystem...</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43:    Global Parameter File not found in filesystem! File not opened.</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43: Global Parameter File finished.</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43: Initialize TestSet starting ...</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43:    Not connected to TestDirector.</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43:    Setting up TestSet for filesystem usage...</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43:    TestSet Name:            </Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43:    Scenario File Path:       \</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43:    Scenario File Name:       \SC_.xls</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43: Initialize TestSet finished.</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43: Initialize Scenario starting ...</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43:    Running in Scenario Mode</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="User">
+<Data>
+    <Name>2017_06_27_11_09_43:    Opening Scenario File ...</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:43</StartTime>
+    <Result>Done</Result>
+    <Extension>
+      <IconKey>e4a2afa3d8bb4f6f98536e307a87eed1</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <IsPlainTextStepInfo>True</IsPlainTextStepInfo>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="Step">
+<Data>
+    <Name>Wir konnten '\SC_.xls' nicht finden. Wurde das Objekt vielleicht verschoben, umbenannt oder gelöscht?</Name>
+    <ErrorText>Wir konnten '\SC_.xls' nicht finden. Wurde das Objekt vielleicht verschoben, umbenannt oder gelöscht?</ErrorText>
+    <Description>&lt;BR/&gt;Line (287): &amp;quot;&amp;quot;.</Description>
+    <StartTime>2017-06-27 11:09:44</StartTime>
+    <Result>Failed</Result>
+    <Extension>
+      <StackTrace>
+        <StackFrame>
+          <ModuleName><![CDATA[NeueNachweisplanung]]></ModuleName>
+          <FileName><![CDATA[NeueNachweisplanung]]></FileName>
+          <Language><![CDATA[eval code]]></Language>
+          <FunctionName><![CDATA[OpenParFile]]></FunctionName>
+          <Scripts><![CDATA[Set thisWorkbook = ExcelAppl.Workbooks.Open (WorkBookName, 0, True)]]></Scripts>
+          <LineNo><![CDATA[287]]></LineNo>
+        </StackFrame>
+        <StackFrame>
+          <ModuleName><![CDATA[NeueNachweisplanung]]></ModuleName>
+          <FileName><![CDATA[NeueNachweisplanung]]></FileName>
+          <Language><![CDATA[eval code]]></Language>
+          <FunctionName><![CDATA[OpenScenarioFile]]></FunctionName>
+          <Scripts><![CDATA[RetVal = .ScenarioFile.OpenParFile (.ScenarioFileName, .ScenarioFileLocation, "RW")]]></Scripts>
+          <LineNo><![CDATA[275]]></LineNo>
+        </StackFrame>
+        <StackFrame>
+          <ModuleName><![CDATA[NeueNachweisplanung]]></ModuleName>
+          <FileName><![CDATA[NeueNachweisplanung]]></FileName>
+          <Language><![CDATA[eval code]]></Language>
+          <FunctionName><![CDATA[LoadScenarioFile]]></FunctionName>
+          <Scripts><![CDATA[OpenScenarioFile thisTestSession]]></Scripts>
+          <LineNo><![CDATA[356]]></LineNo>
+        </StackFrame>
+        <StackFrame>
+          <ModuleName><![CDATA[NeueNachweisplanung]]></ModuleName>
+          <FileName><![CDATA[NeueNachweisplanung]]></FileName>
+          <Language><![CDATA[eval code]]></Language>
+          <FunctionName><![CDATA[InitScenario]]></FunctionName>
+          <Scripts><![CDATA[LoadScenarioFile thisTestSession]]></Scripts>
+          <LineNo><![CDATA[390]]></LineNo>
+        </StackFrame>
+        <StackFrame>
+          <ModuleName><![CDATA[NeueNachweisplanung]]></ModuleName>
+          <FileName><![CDATA[NeueNachweisplanung]]></FileName>
+          <Language><![CDATA[eval code]]></Language>
+          <FunctionName><![CDATA[InitTest]]></FunctionName>
+          <Scripts><![CDATA[InitTest = InitScenario (G_thisTestSession)]]></Scripts>
+          <LineNo><![CDATA[650]]></LineNo>
+        </StackFrame>
+        <StackFrame>
+          <ModuleName><![CDATA[NeueNachweisplanung]]></ModuleName>
+          <FileName><![CDATA[NeueNachweisplanung]]></FileName>
+          <Language><![CDATA[NeueNachweisplanung]]></Language>
+          <FunctionName><![CDATA[ExecuteTest]]></FunctionName>
+          <Scripts><![CDATA[RetVal = InitTest (G_ModuleName)]]></Scripts>
+          <LineNo><![CDATA[137]]></LineNo>
+        </StackFrame>
+        <StackFrame>
+          <ModuleName><![CDATA[NeueNachweisplanung]]></ModuleName>
+          <FileName><![CDATA[NeueNachweisplanung]]></FileName>
+          <Language><![CDATA[ExecuteTest ()]]></Language>
+          <FunctionName><![CDATA[VBScript global code]]></FunctionName>
+          <Scripts><![CDATA[ExecuteTest ()]]></Scripts>
+          <LineNo><![CDATA[468]]></LineNo>
+        </StackFrame>
+      </StackTrace>
+      <IconKey>1d861ba9ac8f4bfd89463a15364863a8</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <MergeIsErrorIcon>True</MergeIsErrorIcon>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="Step">
+<Data>
+    <Name>Stop Run</Name>
+    <Description>Run stopped by user.</Description>
+    <StartTime>2017-06-27 11:12:04</StartTime>
+    <Result>Information</Result>
+    <Extension>
+      <IconKey>854fec8295854c74af486debb2227b5a</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+    </Extension>
+  </Data>
+</ReportNode>
+<Data>
+    <Name>NeueNachweisplanung</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:42</StartTime>
+    <Duration>142</Duration>
+    <Result>Failed</Result>
+    <InputParameters />
+    <Extension>
+      <IconKey>946f672beab144dea04eed7852698150</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+    </Extension>
+  </Data>
+</ReportNode>
+<Data>
+    <Name>Action0</Name>
+    <Description />
+    <StartTime>2017-06-27 11:09:42</StartTime>
+    <Duration>142</Duration>
+    <Result>Failed</Result>
+    <Extension>
+      <IconKey>b5a201da3bf34dc2a2cee6db5c426d06</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+    </Extension>
+    <Index>1</Index>
+    <TestedApplications />
+  </Data>
+</ReportNode>
+<Data>
+    <Name>PIA_Nachweisplanung</Name>
+    <ToolName>HPE Unified Functional Testing</ToolName>
+    <ToolVersion>14.0</ToolVersion>
+    <Description />
+    <StartTime>2017-06-27 11:09:41</StartTime>
+    <Duration>143</Duration>
+    <Result>Failed</Result>
+    <InputParameters />
+    <Extension>
+      <IconKey>7042c9ab5afb4103964b9ecf8f9e7953</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+    </Extension>
+    <Environment>
+      <Timezone>+02:00:00</Timezone>
+      <Locale>Deutsch (Deutschland)</Locale>
+      <User>INT\lavada</User>
+      <CpuInfo>Intel(R) Core(TM) i7-5600U CPU @ 2.60GHz</CpuInfo>
+      <NumberOfCores>4</NumberOfCores>
+      <TotalMemory>16256</TotalMemory>
+      <HostName>int.root.msg.ag\MSGN06001</HostName>
+      <OSInfo>Windows 10</OSInfo>
+    </Environment>
+    <TestedApplications />
+    <Links>
+      <Link type="DataTable" reference="Default.xls" displayname="Default Data Table" />
+    </Links>
+  </Data>
+</ReportNode>
+<GeneralInfo>
+    <ResultName>Res2</ResultName>
+    <RunStartTime>2017-06-27 11:09:41</RunStartTime>
+    <Timezone>+02:00:00</Timezone>
+    <OrchestrationToolName>HPE Unified Functional Testing</OrchestrationToolName>
+    <OrchestrationToolVersion>14.0</OrchestrationToolVersion>
+  </GeneralInfo>
+</Results>

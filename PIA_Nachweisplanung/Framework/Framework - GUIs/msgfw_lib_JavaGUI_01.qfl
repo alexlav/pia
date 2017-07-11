@@ -1,0 +1,520 @@
+'##########################################################################################
+' Interface functions for Java
+'##########################################################################################
+
+Class CL_TestGUI
+  Private Sub Class_Initialize
+    GUIType = "Java"
+    Set GUITableNextPageButton = Nothing
+  End Sub
+  
+  Private Sub Class_Terminate
+  End Sub
+  
+  
+  Public GUIType
+  Public GUITableNextPageButton
+End Class
+
+
+'==========================================================================================
+' BUTTON 
+'==========================================================================================
+Function GUIClick (Obj)
+  Obj.Click
+End Function
+
+
+Function GUIGetButtonName (Obj)
+  GUIGetButtonName = Obj.GetROProperty ("label")
+  'GUIGetButtonName = Obj.GetROProperty ("attached text")
+  'GUIGetButtonName = Obj.GetROProperty ("tagname")
+End Function
+
+  
+Function GUIButtonGetIsEnabled (Obj)
+  GUIButtonGetIsEnabled = Obj.GetROProperty ("enabled")
+End Function
+
+
+Function GUIPressButton (Obj, ButtonName)
+  Obj.Press ButtonName
+End Function
+
+
+'==========================================================================================
+' EDIT 
+'==========================================================================================
+Function GUIEditSet (Obj, v)
+
+  On Error Resume Next
+    Obj.Set v
+    ErrorNr = Err.Number
+    ErrorDescr = Err.Description
+  On Error Goto 0
+
+  If ErrorNr <> 0 Then
+     QTReport "ERROR", ErrorDescr
+     QTReport "DONE", "This error occured with the following GUI object:"
+  End If
+
+End Function
+
+
+Function GUIEditGetValue (Obj)
+  GUIEditGetValue = Obj.GetROProperty("value")
+End Function
+
+
+Function GUIGetEditName (Obj)
+  GUIGetEditName = Obj.GetROProperty ("label")
+  'GUIGetEditName = Obj.GetROProperty ("attached text")
+  'GUIGetEditName = Obj.GetROProperty ("tagname")
+End Function
+
+
+Function GUIEditGetIsEnabled (Obj)
+  GUIEditGetIsEnabled = Obj.GetROProperty ("enabled")
+End Function
+
+
+Function GUIEditGetMaxLength (Obj)
+  GUIEditGetMaxLength = 1000  'Thsi value is not being returned by Java Interface
+End Function
+
+
+'==========================================================================================
+' COMBO BOX
+'==========================================================================================
+Function GUIComputeComboBox (Obj, val)
+  GUIComputeComboBox = 0
+
+  On Error Resume Next
+    Obj.Select val
+    ErrorNr = Err.Number
+    ErrorDescr = Err.Description
+  On Error Goto 0
+
+  If ErrorNr <> 0 Then
+     QTReport "ERROR", ErrorDescr
+     QTReport "DONE", "This error occured with the following GUI object:"
+     GUIComputeComboBox = -1
+  End If
+  
+End Function
+
+
+Function GUIComboBoxGetValue (Obj)
+  GUIComboBoxGetValue = Obj.GetROProperty ("value")
+End Function
+
+
+Function GUIGetComboBoxName (Obj)
+  GUIGetComboBoxName = Obj.GetROProperty ("label")
+  'GUIGetComboBoxName = Obj.GetROProperty ("attached text")
+  'GUIGetComboBoxName = Obj.GetROProperty ("tagname")
+End Function
+
+
+Function GUIComboBoxIsEnabled (Obj)
+  GUIComboBoxIsEnabled = Obj.GetROProperty ("enabled")
+End Function
+
+
+'==========================================================================================
+' CHECK BOX
+'==========================================================================================
+Function GUIComputeCheckBox (Obj,v)
+  Obj.Set v
+End Function
+
+
+Function GUICheckBoxGetValue (Obj)
+  GUICheckBoxGetValue = Obj.GetROProperty("value")
+End Function
+
+
+Function GUIGetCheckBoxName (Obj)
+  GUIGetCheckBoxName = Obj.GetROProperty ("label")
+  'GUIGetCheckBoxName = Obj.GetROProperty ("attached text")
+  'GUIGetCheckBoxName = Obj.GetROProperty ("tagname")
+End Function
+
+
+Function GUICheckBoxIsEnabled (Obj)
+  GUICheckBoxIsEnabled = Obj.GetROProperty ("enabled")
+End Function
+
+
+'==========================================================================================
+' RADIO BUTTON
+'==========================================================================================
+Function GUISetRadioButton (Obj, v)
+  If IsNumeric (v) Then
+     Obj.Select "#" & CStr (CInt (v) - 1)     'Web Radio Button Group Index is starting at 0
+  Else
+    Select Case v
+      Case "ON"     Obj.Set
+    End Select
+  End If
+End Function
+
+
+Function GUIRadioButtonGetIsSelected (Obj)
+  val = Obj.GetROProperty ("value")
+  If val = "ON" Then
+     GUIRadioButtonGetIsSelected = True
+  Else
+     GUIRadioButtonGetIsSelected = False
+  End If
+
+  'GUIRadioButtonGetIsSelected = Obj.GetROProperty ("Selected")
+End Function
+
+
+Function GUIGetRadioButtonName (Obj)
+  GUIGetRadioButtonName = Obj.GetROProperty ("label")
+  'GUIGetRadioButtonName = Obj.GetROProperty ("attached text")
+  'GUIGetRadioButtonName = Obj.GetROProperty ("tagname")
+End Function
+
+
+'==========================================================================================
+' TREE
+'==========================================================================================
+Function GUIComputeTree (Obj, val)
+  GUIComputeTree = 0  
+  Obj.Select val 
+End Function
+
+
+Function GUIComboBoxGetValue (Obj)
+  GUIComboBoxGetValue = Obj.GetROProperty ("value")
+End Function
+
+
+Function GUIGetTreeName (Obj)
+  GUIGetTreeName = Obj.GetROProperty ("label")
+  'GUIGetTreeName = Obj.GetROProperty ("attached text")
+  'GUIGetTreeName = Obj.GetROProperty ("tagname")
+End Function
+
+
+'==========================================================================================
+' TABLES
+'==========================================================================================
+Function GUISetCellData (Obj, Row, Column, v)
+  Obj.SetCellData Row-1, Column, v
+End Function
+
+
+Function GUISelectListItemInTableCell (Obj, row, col, ListItem)
+   row = row - 1
+
+	If Not IsNumeric (col) OR InStr(1,col,".") > 1 Then
+		cnt = Obj.GetROProperty ("cols")
+		For i = 0 to cnt-1
+			itm = Obj.GetColumnName (i)
+				If LCase (itm) = LCase (col) Then
+					col = i
+					Exit For
+				End If
+		Next 
+	End If
+
+	Obj.ClickCell row, col 
+
+	Set tableobj = Obj.Object 
+
+	' Get the location where the cell should be and get the component
+	' at that location which should be the combobox
+	Set rect = tableobj.getCellRect (row, col, 1)
+	Set pobj = rect.getLocation
+	Set cell = tableobj.getComponentAt (pobj) 
+	
+	' Call the JComboBox method setSelectedItem.
+	Set st= Obj.CreateObject ("java.lang.String", ListItem)
+	cell.setSelectedItem st 
+	
+	' Release objects
+	Set cell = nothing
+	Set pobj = nothing
+	Set rect = nothing
+	Set tableobj = nothing
+	Set st = nothing
+End Function
+
+
+Function GUIGetCellData (Obj, Row, Column)
+  GUIGetCellData = CStr (Obj.GetCellData (Row-1, Column))
+End Function
+
+
+Function GUIColumnExist (Obj, ColName)
+  GUIColumnExist = True
+
+  If IsNumeric (ColName) Then  Exit Function  End If
+
+  Cols = Obj.GetROProperty("cols")
+
+  For i = 0 To Cols-1
+    If Obj.GetColumnName (i) = ColName Then
+       Exit Function
+    End If
+  Next
+  
+  GUIColumnExist = False
+End Function
+
+
+Function GUISelectCell (Obj, Row, Column)
+  Obj.ClickCell Row-1,Column
+End Function
+
+
+Function GUISelectRow (Obj, Row)  
+   Obj.SelectRow CInt (Row-1)
+End Function
+
+
+Function GUIActivateRow (Obj, Row)
+	Obj.ActivateRow Row-1
+End Function
+
+
+Function GUIGetTableRowCount (Obj)
+  GUIGetTableRowCount = GetROProperty("rows")
+End Function
+
+
+Function GUIGetTabName (Obj)
+  'GUIGetTabName = Obj.GetROProperty ("label")
+  GUIGetTabName = Obj.GetROProperty ("attached text")
+  'GUIGetTabName = Obj.GetROProperty ("tagname")
+End Function
+
+
+'==========================================================================================
+' MENU
+'==========================================================================================
+Function GUIComputeMenu (Obj)
+  Obj.Select
+End Function
+
+
+Function GUIGetMenuName (Obj)
+  GUIGetMenuName = Obj.GetROProperty ("label")
+  'GUIGetMenuName = Obj.GetROProperty ("attached text")
+  'GUIGetMenuName = Obj.GetROProperty ("tagname")
+End Function
+
+
+'==========================================================================================
+' TAP
+'==========================================================================================
+Function GUITapSelect (Obj,TapName)
+  Obj.Select TapName
+End Function
+
+
+Function GUIGetTab (Obj, TabName)
+  QTReport "WARN", "msgfw_lib_JavaGUI: Function 'GUIGetTab' has to be checked!"
+  QTReport "DONE", "AllItems = '" & Obj.GetROProperty("AllItems") & "'"
+
+  AllItems = Split (Obj.GetROProperty("AllItems"), ";")
+
+  For i = 1 To UBound (AllItems) 
+    If InStr (1, AllItems(i-1), TabName) > 0 Then
+       TabNr = "#" & i
+       GUIGetTab = TabNr
+       Exit Function
+    End If
+  Next
+  GUIGetTab = ""
+End Function
+
+
+'==========================================================================================
+' LOGON /-OFF
+'==========================================================================================
+Function GUI_LogonWithDefaultUser (thisTestSession)
+  GUI_LogonWithDefaultUser = 0
+
+  'QTReport "DONE","Logging on with default user..."
+End Function
+
+
+Function GUI_GetCurrentSystemProperties (thisTestSession)
+  GUI_GetCurrentSystemProperties = 0
+End Function
+
+
+Function GUI_SessionExists (pTestSession)  'WEBOK
+  i = 0
+
+  QTReport "DONE","  Checking for existing session..."
+   
+  Do While Not JavaWindow("jw").msgfw_Exist(1)
+    Wait(1)
+    i = i+1
+    If i > 3 Then
+       GUI_SessionExists = False
+       Exit Function
+    End If
+  Loop
+
+  GUI_SessionExists = True
+End Function
+
+
+'==========================================================================================
+' WINDOW
+'==========================================================================================
+Function GUIWindowGetText (Obj)
+  GUIWindowGetText = Obj.GetROProperty ("title")
+  'GUIWindowGetText = Obj.GetROProperty ("label")
+  'GUIWindowGetText = Obj.GetROProperty ("attached text")
+  'GUIWindowGetText = Obj.GetROProperty ("tagname")
+End Function
+
+
+Function GUILogWindowClose ()
+  'SAPGuiSession("s").SAPGuiWindow("mw").SAPGuiButton("Back   (F3)").Click
+End Function
+
+
+'==========================================================================================
+' COMMON
+'==========================================================================================
+Function GUIObjExist (Obj, n)
+  If Obj.Exist(n) Then
+     GUIObjExist = True
+  Else
+     GUIObjExist = False
+  End If
+End Function
+
+
+Function GUIApplicationExit ()
+	'Reporter.Filter = rfDisableAll
+	If JavaWindow("BCAP - contains confidential").Exist(1) Then
+		JavaWindow("BCAP - contains confidential").Close
+	End If
+	If Window("BCAP Monitor").Exist(1) Then
+		Window("BCAP Monitor").Close
+	End If
+	If Browser("AS2 Client Container RCP").Exist(1) Then
+		Browser("AS2 Client Container RCP").Close
+	End If
+	'Reporter.Filter = rfEnableAll
+End Function
+
+Function ExpandEnvironmentVariables (strToExpand)
+	
+	Dim WshShell
+	
+	Set WshShell = CreateObject("WScript.Shell")
+	ExpandEnvironmentVariables = WshShell.ExpandEnvironmentStrings(strToExpand)
+	Set WshShell = Nothing
+	
+End Function
+
+Function GUITakeScreenshot (Obj) 
+	On Error Resume Next
+	Dim d	
+	d = ExpandEnvironmentVariables("%TEMP%")
+	
+	path_screenshot_file =  d & "screenshot_" & Year (Now) & Month (Now) & Day (Now) & "_" & Hour (Now) & Minute (Now) & Second (Now) & ".png"
+	
+	Obj.CaptureBitmap path_screenshot_file, true
+	If Err.Number <> 0 Then
+		QTReport "DONE", "GUITakeScreenshot Error: " & Err.Description
+	End If
+	
+    Reporter.ReportEvent micDone,"Screenshot", "Screenshot", path_screenshot_file
+	
+	DeleteFile path_screenshot_file
+End Function
+
+
+Function GUIGetScreenshotObject ()
+  Set GUIGetScreenshotObject = Desktop
+End Function
+
+
+Function GUIRecoveryScenario ()
+	QTReport "WARN", "GUIRecoveryScenario: implement me!"
+	ExitTest
+End Function
+
+
+Function ComputeStandardActions_Java (SheetName, ByRef CurrentRow)
+  ComputeStandardActions_Java = 0
+
+  thisAction = DataTable ("Action", SheetName)  
+
+    Select Case thisAction
+      Case "Check Status OK"      CheckStatusBar "OK", "Check Status OK"
+      Case "Check Status Error"   CheckStatusBar "ERROR", "Check Status Error"
+      Case "Check Status Bar Text"
+        If DTColumnExist ("StatusBarText", SheetName) Then
+           CheckStatusBarText DataTable ("StatusBarText", SheetName)
+        End If
+    
+      Case Else 
+        ComputeStandardActions_Java = ComputeStandardActions (SheetName, CurrentRow)
+    End Select
+End Function
+
+
+'##########################################################################################
+' Register msgfw functions to QTP
+'##########################################################################################
+RegisterUserFunc "JavaWindow",          "msgfw_Descr_Edit",        "msgfw_Descr_Edit"
+RegisterUserFunc "JavaWindow",          "msgfw_Descr_ComboBox",    "msgfw_Descr_ComboBox"
+RegisterUserFunc "JavaWindow",          "msgfw_GetGUIObject",      "msgfw_GetGUIObject"
+RegisterUserFunc "JavaWindow",          "msgfw_Exist",             "msgfw_Exist"
+
+RegisterUserFunc "JavaDialog",          "msgfw_Exist",             "msgfw_Exist"
+
+RegisterUserFunc "JavaButton",          "msgfw_Click",             "msgfw_Click"
+RegisterUserFunc "JavaButton",          "msgfw_Exist",             "msgfw_Exist"
+
+RegisterUserFunc "JavaEdit",            "msgfw_Edit",              "msgfw_Edit"
+RegisterUserFunc "JavaEdit",            "msgfw_Exist",             "msgfw_Exist"
+RegisterUserFunc "JavaEdit",            "msgfw_EditSecure",        "msgfw_EditSecure"
+
+RegisterUserFunc "JavaList",            "msgfw_ComboBox",          "msgfw_ComboBox"
+RegisterUserFunc "JavaList",            "msgfw_Exist",             "msgfw_Exist"
+
+RegisterUserFunc "JavaRadioButton",     "msgfw_RadioButton",       "msgfw_RadioButton"
+RegisterUserFunc "JavaRadioButton",     "msgfw_Exist",             "msgfw_Exist"
+
+RegisterUserFunc "JavaCheckBox",        "msgfw_CheckBox",          "msgfw_CheckBox"
+RegisterUserFunc "JavaCheckBox",        "msgfw_Exist",             "msgfw_Exist"
+
+RegisterUserFunc "JavaTable",           "msgfw_Cell",              "msgfw_Cell"
+RegisterUserFunc "JavaTable",           "msgfw_CellVbLf",          "msgfw_CellVbLf"
+RegisterUserFunc "JavaTable",           "msgfw_SetCellData",       "msgfw_SetCellData"
+RegisterUserFunc "JavaTable",           "msgfw_SelectCell",        "msgfw_SelectCell"
+RegisterUserFunc "JavaTable",           "msgfw_Exist",             "msgfw_Exist"
+RegisterUserFunc "JavaTable",           "msgfw_SelectRow",         "msgfw_SelectRow"
+RegisterUserFunc "JavaTable",			"msgfw_ActivateRow",		   "msgfw_ActivateRow"
+RegisterUserFunc "JavaTable",           "msgfw_SelectRowCheckBox", "msgfw_SelectRowCheckBox"
+RegisterUserFunc "JavaTable",           "msgfw_SelectListItemInTableCell", "msgfw_SelectListItemInTableCell"
+
+
+RegisterUserFunc "JavaTree",            "msgfw_Tree",              "msgfw_Tree"
+RegisterUserFunc "JavaTree",            "msgfw_Exist",             "msgfw_Exist"
+
+RegisterUserFunc "JavaTab",             "msgfw_TapSelect",         "msgfw_TapSelect"
+RegisterUserFunc "JavaTab",             "msgfw_Exist",             "msgfw_Exist"
+
+RegisterUserFunc "JavaToolbar",         "msgfw_PressButton",       "msgfw_PressButton"
+RegisterUserFunc "JavaToolbar",         "msgfw_Exist",             "msgfw_Exist"
+
+RegisterUserFunc "JavaMenu",            "JAVA_msgfw_MenuSelect",   "JAVA_msgfw_MenuSelect"
+RegisterUserFunc "JavaMenu",            "msgfw_Exist",             "msgfw_Exist"
+
+RegisterUserFunc "JavaStaticText",      "msgfw_Exist",             "msgfw_Exist"
+

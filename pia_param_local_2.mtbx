@@ -1,0 +1,8 @@
+<Mtbx>
+<Test name="PIA_Nachweisplanung" path="C:\Projects\UFT\LOCAL\PIA_Tests\PIA_Nachweisplanung">
+<Parameter name="Param1" value="http://msas6602i.msg.de:9080/pia/certification/" type="string"/>
+</Test>
+<Test name="PIA_Nachweisplanung" path="C:\Projects\UFT\LOCAL\PIA_Tests\PIA_Nachweisplanung">
+<Parameter name="Param1" value="http://msas6602i.msg.de/pia/certification/" type="string"/>
+</Test>
+</Mtbx>
