@@ -12,7 +12,7 @@
 Const G_ModuleName = "PIA_Nachweisplanung"
 
 'Path to folder which contains all function libraries
-Const G_FolderPathFunctionLibraries = "C:\Projects\UFT\LOCAL\PIA\Framework" 'use this if running locally
+Const G_FolderPathFunctionLibraries = "C:\github\pia1\pia\Framework" 'use this if running locally
 
 PUBLIC WAITTIME_PER_STEP
 
@@ -143,7 +143,7 @@ Function ExecuteTest ()
     Select Case msgfw_EvaluatedData  ("Action", "Process")
       Case "Run PIA"  				 				RetVal = RunPIA ("Process")
       Case "Set step time"							RetVal = SetWaittime("Process")
-      Case "Neue Nachweisplanung"            	    RetVal = NeueNachweisplanung ("Process")
+      'Case "Neue Nachweisplanung"            	    RetVal = NeueNachweisplanung ("Process")
       Case "Call Neue Nachweisplanung"				RetVal = ComputeSheetNeueNachweisplanung ("NeueNachweisplanung")
       Case "Close PIA"								RetVal = ClosePIA ()
       Case "->"										RetVal = 0
@@ -172,7 +172,6 @@ Function RunPIA (SheetName)
 	
 	wait WAITTIME_PER_STEP
 
-
 	wait WAITTIME_PER_STEP
 		Set wshShell = CreateObject("WScript.Shell")
 		Browser("Parts Inspection and Approval").Page("Parts Inspection and Approval").Sync
@@ -188,18 +187,18 @@ wshShell.SendKeys "% ", True  'the "alt" % and the character it is modifying sho
 '		wait WAITTIME_PER_STEP
 '		wait WAITTIME_PER_STEP
 '		wait WAITTIME_PER_STEP
-'wshShell.SendKeys "{UP 4}"  ' this is a separate second command
-'wshShell.SendKeys "{ENTER}"  ' this is a separate second command
+'	wshShell.SendKeys "{UP 4}"  ' this is a separate second command
+'	wshShell.SendKeys "{ENTER}"  ' this is a separate second command
 '		wait WAITTIME_PER_STEP
-	wshShell.SendKeys "%", True
-			wait WAITTIME_PER_STEP
-wshShell.SendKeys "a", True
-		wait WAITTIME_PER_STEP
-wshShell.SendKeys "z", True
-		wait WAITTIME_PER_STEP
-wshShell.SendKeys "{UP 4}", True 
-		wait WAITTIME_PER_STEP
-wshShell.SendKeys "{ENTER}" 
+	'wshShell.SendKeys "%", True
+	'		wait WAITTIME_PER_STEP
+	'wshShell.SendKeys "a", True
+	'	wait WAITTIME_PER_STEP
+	'wshShell.SendKeys "z", True
+	'	wait WAITTIME_PER_STEP
+	'wshShell.SendKeys "{UP 4}", True 
+	'	wait WAITTIME_PER_STEP
+	'wshShell.SendKeys "{ENTER}" 
 End Function
 
 Function ClosePIA ()
