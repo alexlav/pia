@@ -11,7 +11,8 @@
 'Name of the automation module
 Const G_ModuleName = "PIA_Nachweisplanung"
 
-'Path to folder which contains all function libraries
+'Path to folder which contains all function libraries 
+'using Version Control System Github
 Const G_FolderPathFunctionLibraries = "C:\github\pia1\pia\Framework" 'use this if running locally
 
 PUBLIC WAITTIME_PER_STEP
